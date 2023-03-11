@@ -29,13 +29,9 @@ python:
       path: .
       extra_requirements:
         - docs
-    - method: pip
-      path: another/package
   system_packages: true
 
-# Build PDF & ePub
-formats:
-  - epub
-  - pdf
+# Build all formats
+formats: all
 
   
