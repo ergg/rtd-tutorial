@@ -16,14 +16,23 @@ build:
     # golang: "1.19"
 
 # Build documentation in the docs/ directory with Sphinx
+# Sphinx config
 sphinx:
-   configuration: docs/conf.py
-
-# If using Sphinx, optionally build your docs in additional formats such as PDF
-# formats:
-#    - pdf
-
-# Optionally declare the Python requirements required to build your docs
+   configuration: docs/source/conf.py
+   fail_on_warning: true
+     
+# Install our python package before building the docs
 python:
-   install:
-   - requirements: docs/requirements.txt
+  install:
+    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+  system_packages: true
+
+# Build all formats
+formats: 
+  - htmlzip
+  - pdf
+  
