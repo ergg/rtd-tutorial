@@ -24,8 +24,14 @@ sphinx:
 # Install our python package before building the docs
 python:
   install:
-    - method: pip
     - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+    - method: pip
+      path: another/package
+  system_packages: true
 
 # Build all formats
   formats: all
