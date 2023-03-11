@@ -33,7 +33,7 @@ python:
 
 # Build all formats
 formats: 
-  - html
+  - htmlzip
   - pdf
 
   
