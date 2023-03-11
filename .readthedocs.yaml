@@ -33,6 +33,9 @@ python:
       path: another/package
   system_packages: true
 
-# Build all formats
-  formats: all
+# Build PDF & ePub
+formats:
+  - epub
+  - pdf
+
   
